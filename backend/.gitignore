@@ -47,3 +47,4 @@ yarn.lock
 
 # Optional: If you're using Jest, add the following
 coverage/
+.env
