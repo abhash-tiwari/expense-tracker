@@ -4,7 +4,7 @@ import TransactionForm from './components/TransactionForm';
 import TransactionList from './components/TransactionList';
 
 
-const API_BASE_URL = 'http://localhost:5000/api';
+const API_BASE_URL = 'https://expense-tracker-1k61.onrender.com/api';
 
 function App() {
   const [transactions, setTransactions] = useState([]);
@@ -60,29 +60,29 @@ function App() {
   return (
     <div className="min-h-screen bg-gray-100 py-8">
       <div className="container mx-auto max-w-3xl px-4">
-        <h1 className="text-3xl font-bold text-center mb-8">Expense Tracker</h1>
+        <h1 className="text-5xl font-bold text-center mb-8">Expense Tracker</h1>
         
         <div className="grid grid-cols-3 gap-4 mb-8">
           <div className="bg-white p-4 rounded-lg shadow-md">
-            <h3 className="text-lg font-semibold text-gray-600">Income</h3>
-            <p className="text-2xl font-bold text-green-600">
-              ${summary.income.toFixed(2)}
+            <h3 className="text-lg font-bold text-gray-600">Income</h3>
+            <p className="text-2xl font-bold text-green-600 overflow-auto ">
+            ₹{summary.income.toFixed(2)}
             </p>
           </div>
           
           <div className="bg-white p-4 rounded-lg shadow-md">
-            <h3 className="text-lg font-semibold text-gray-600">Expenses</h3>
-            <p className="text-2xl font-bold text-red-600">
-              ${summary.expenses.toFixed(2)}
+            <h3 className="text-lg font-bold text-gray-600">Expenses</h3>
+            <p className="text-2xl font-bold text-red-600 overflow-auto">
+            ₹{summary.expenses.toFixed(2)}
             </p>
           </div>
           
           <div className="bg-white p-4 rounded-lg shadow-md">
-            <h3 className="text-lg font-semibold text-gray-600">Balance</h3>
-            <p className={`text-2xl font-bold ${
+            <h3 className="text-lg font-bold text-gray-600">Balance</h3>
+            <p className={`text-2xl font-bold overflow-auto ${
               summary.balance >= 0 ? 'text-green-600' : 'text-red-600'
             }`}>
-              ${summary.balance.toFixed(2)}
+              ₹{summary.balance.toFixed(2)}
             </p>
           </div>
         </div>
